@@ -1,12 +1,14 @@
 import React from "react";
 import "./index.css";
 import About from "./Components/About";
+import Navbar from "./Components/Navbar";
 import { Switch, Route } from "react-router-dom";
 
 function App() {
   return (
     <>
       <Switch>
+        <Navbar />
         <Route exact path="/">
           This is home page
         </Route>
