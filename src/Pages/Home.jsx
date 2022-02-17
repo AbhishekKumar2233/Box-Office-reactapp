@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import MainPageLayout from "../Components/MainPageLayout";
 import Navbar from "../Components/Navbar";
 import { apiGet } from "../misc/config";
+import Showgrid from "../Components/show/Showgrid";
+import Actorgrid from "../Components/actor/Actorgrid";
 import "../index.css";
 
 export default function Home() {
@@ -34,13 +36,17 @@ export default function Home() {
       return <div>No Result</div>;
     }
     if (result && result.length > 0) {
-      return result[0].show
-        ? result.map((result) => (
-            <div key={result.show.id}>{result.show.name}</div>
-          ))
-        : result.map((result) => (
-            <div key={result.person.id}>{result.person.name}</div>
-          ));
+      return result[0].show ? (
+        <Showgrid data={result} />
+      ) : (
+        //result.map((result) => (
+        // <div key={result.show.id}>{result.show.name}</div>));
+
+        <Actorgrid data={result} />
+      );
+      //result.map((result) => (
+      // <div key={result.person.id}>{result.person.name}</div>));
+
       //  2nd logic to get same output
       //     searchOption === "shows"
       // ? result.map((result) => (
