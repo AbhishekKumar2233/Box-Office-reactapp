@@ -6,11 +6,6 @@ import "../index.css";
 export default function Home() {
   const [input, setInput] = useState("");
 
-  function onInputchange(event) {
-    const en = event.target.value;
-    setInput(en);
-  }
-
   function onSearch() {
     fetch(`https://api.tvmaze.com/search/shows?q=${input}`)
       .then((res) => res.json())
@@ -19,9 +14,26 @@ export default function Home() {
       });
   }
 
+  function onInputchange(event) {
+    const en = event.target.value;
+    setInput(en);
+  }
+
+  function Onkeydown(event) {
+    if (event.keyCode === 13) {
+      onSearch();
+    }
+    // console.log(event.keyCode);
+  }
+
   return (
     <MainPageLayout>
-      <input type="text" onChange={onInputchange} value={input} />
+      <input
+        type="text"
+        onChange={onInputchange}
+        onKeyDown={Onkeydown}
+        value={input}
+      />
       <button type="button" onClick={onSearch}>
         Search
       </button>
