@@ -9,15 +9,13 @@ const Links = [
 export default function Navbar() {
   return (
     <div className="navbar">
-      <nav>
-        <ul>
-          {Links.map((item) => (
-            <li>
-              <Link to={item.to}>{item.name}</Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <ul>
+        {Links.map((item) => (
+          <li>
+            <Link to={item.to}>{item.name}</Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

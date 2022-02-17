@@ -15,12 +15,16 @@ code {
   text-align: center;
 }
 .navbar {
-  margin: 0px 0px;
-  padding: 10px 10px;
+  display: flex;
+  margin: 0px auto;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 0px;
 }
 .navbar ul {
   display: flex;
-  margin: 0px 30vw;
+  padding: 0px;
 }
 .navbar ul li {
   list-style: none;
