@@ -7,6 +7,8 @@ import "../index.css";
 export default function Home() {
   const [input, setInput] = useState("");
   const [result, setResult] = useState(null);
+  const [searchOption, setSearchoption] = useState("shows");
+  const isshowsSearch = searchOption === "shows";
 
   function onSearch() {
     apiGet(`/search/shows?q=${input}`).then((result) => {
@@ -43,17 +45,44 @@ export default function Home() {
     return null;
   }
 
+  function onRadiochange(event) {
+    setSearchoption(event.target.value);
+  }
+
   return (
     <MainPageLayout>
       <input
+        placeholder="Search for something"
         type="text"
         onChange={onInputchange}
         onKeyDown={Onkeydown}
         value={input}
       />
+
       <button type="button" onClick={onSearch}>
         Search
       </button>
+      <br />
+      <label htmlFor="shows-search">
+        Shows
+        <input
+          id="shows-search"
+          type="radio"
+          value="shows"
+          checked={isshowsSearch}
+          onChange={onRadiochange}
+        />
+      </label>
+      <label htmlFor="actors-search">
+        Actors
+        <input
+          id="actors-search"
+          type="radio"
+          value="people"
+          checked={!isshowsSearch}
+          onChange={onRadiochange}
+        />
+      </label>
       {renderResult()}
     </MainPageLayout>
   );
