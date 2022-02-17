@@ -7,13 +7,14 @@ import { Switch, Route } from "react-router-dom";
 function App() {
   return (
     <div>
+      {/* permanent */}
       <Navbar />
-
       <Switch>
+        {/* home page routing */}
         <Route exact path="/">
           This is home page
         </Route>
-
+        {/* simple routing */}
         <Route exact path="/starred">
           This is starred
         </Route>
@@ -21,6 +22,7 @@ function App() {
         <Route exact path="/about">
           <About />
         </Route>
+        {/* error page */}
         <Route>This is 404 page</Route>
       </Switch>
       {/* <Switch>
