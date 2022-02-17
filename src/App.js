@@ -2,14 +2,11 @@ import React from "react";
 import "./index.css";
 import About from "./Pages/About";
 import Home from "./Pages/Home";
-import Navbar from "./Components/Navbar";
 import { Switch, Route } from "react-router-dom";
 
 function App() {
   return (
     <div>
-      {/* permanent */}
-      <Navbar />
       <Switch>
         {/* home page routing */}
         <Route exact path="/">

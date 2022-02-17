@@ -1,10 +1,7 @@
 import React from "react";
+import MainPageLayout from "../Components/MainPageLayout";
 import "../index.css";
 
 export default function Home() {
-  return (
-    <div className="home">
-      <h1>This is Home Page.</h1>
-    </div>
-  );
+  return <MainPageLayout>This is Home page</MainPageLayout>;
 }
