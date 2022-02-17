@@ -23,8 +23,11 @@ code {
   list-style: none;
   padding: 5px;
 }
-.about {
-  width: 100%;
+.home {
   height: 100vh;
-  background-color: red;
+  background-color: rgb(255, 238, 0);
+}
+.about {
+  height: 100vh;
+  background-color: rgb(255, 78, 46);
 }
