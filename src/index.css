@@ -11,17 +11,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.app {
+  text-align: center;
+}
 .navbar {
-  background-color: aquamarine;
   margin: 0px 0px;
   padding: 10px 10px;
 }
 .navbar ul {
   display: flex;
+  margin: 0px 30vw;
 }
 .navbar ul li {
   list-style: none;
-  padding: 5px;
+  padding: 10px;
+}
+.navbar ul li a {
+  text-decoration: none;
+  font-weight: 600;
+}
+.navbar ul li a:hover {
+  border-bottom: 2px solid blue;
 }
 .home {
   height: 100vh;
