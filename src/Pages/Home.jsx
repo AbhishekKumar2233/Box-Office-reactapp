@@ -11,7 +11,7 @@ export default function Home() {
   const isshowsSearch = searchOption === "shows";
 
   function onSearch() {
-    apiGet(`/search/shows?q=${input}`).then((result) => {
+    apiGet(`/search/${searchOption}?q=${input}`).then((result) => {
       console.log(setResult);
       setResult(result);
     });
@@ -34,13 +34,13 @@ export default function Home() {
       return <div>No Result</div>;
     }
     if (result && result.length > 0) {
-      return (
-        <div>
-          {result.map((result) => (
+      return searchOption === "shows"
+        ? result.map((result) => (
             <div key={result.show.id}>{result.show.name}</div>
-          ))}
-        </div>
-      );
+          ))
+        : result.map((result) => (
+            <div key={result.person.id}>{result.person.name}</div>
+          ));
     }
     return null;
   }
