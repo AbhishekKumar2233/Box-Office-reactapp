@@ -34,13 +34,21 @@ export default function Home() {
       return <div>No Result</div>;
     }
     if (result && result.length > 0) {
-      return searchOption === "shows"
+      return result[0].show
         ? result.map((result) => (
             <div key={result.show.id}>{result.show.name}</div>
           ))
         : result.map((result) => (
             <div key={result.person.id}>{result.person.name}</div>
           ));
+      //  2nd logic to get same output
+      //     searchOption === "shows"
+      // ? result.map((result) => (
+      //     <div key={result.show.id}>{result.show.name}</div>
+      //   ))
+      // : result.map((result) => (
+      //     <div key={result.person.id}>{result.person.name}</div>
+      //   ));
     }
     return null;
   }
