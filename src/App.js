@@ -6,9 +6,10 @@ import { Switch, Route } from "react-router-dom";
 
 function App() {
   return (
-    <>
+    <div>
+      <Navbar />
+
       <Switch>
-        <Navbar />
         <Route exact path="/">
           This is home page
         </Route>
@@ -27,7 +28,7 @@ function App() {
           <About />
         </Route>
       </Switch> */}
-    </>
+    </div>
   );
 }
 
