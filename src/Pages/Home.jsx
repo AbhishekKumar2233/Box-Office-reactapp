@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import MainPageLayout from "../Components/MainPageLayout";
 import Navbar from "../Components/Navbar";
+import { apiGet } from "../misc/config";
 import "../index.css";
 
 export default function Home() {
@@ -8,12 +9,10 @@ export default function Home() {
   const [result, setResult] = useState(null);
 
   function onSearch() {
-    fetch(`https://api.tvmaze.com/search/shows?q=${input}`)
-      .then((res) => res.json())
-      .then((result) => {
-        console.log(setResult);
-        setResult(result);
-      });
+    apiGet(`/search/shows?q=${input}`).then((result) => {
+      console.log(setResult);
+      setResult(result);
+    });
   }
 
   function onInputchange(event) {
@@ -36,7 +35,7 @@ export default function Home() {
       return (
         <div>
           {result.map((result) => (
-            <div>{result.show.name}</div>
+            <div key={result.show.id}>{result.show.name}</div>
           ))}
         </div>
       );
