@@ -12,6 +12,7 @@ export default function Actorgrid({ data }) {
           name={person.name}
           gender={person.gender}
           country={person.country ? person.country.name : null}
+          birthday={person.birthday}
           img={person.image ? person.image.medium : null}
         />
       ))}
