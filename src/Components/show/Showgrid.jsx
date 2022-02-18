@@ -1,9 +1,10 @@
 import React from "react";
 import Showcard from "./Showcard";
+import { FlexGrid } from "../styled";
 
 export default function Showgrid({ data }) {
   return (
-    <div>
+    <FlexGrid>
       {data.map(({ show }) => (
         <Showcard
           key={show.id}
@@ -13,6 +14,6 @@ export default function Showgrid({ data }) {
           summary={show.summary}
         />
       ))}
-    </div>
+    </FlexGrid>
   );
 }
