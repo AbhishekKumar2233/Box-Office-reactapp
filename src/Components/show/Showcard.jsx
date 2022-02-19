@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { SearchCard } from "../styled";
+import { StyleShowCard } from "./show.style";
 
 export default function Showcard({ id, name, img, summary }) {
   const summaryAstext = summary
@@ -8,16 +9,16 @@ export default function Showcard({ id, name, img, summary }) {
     : "No Description";
 
   return (
-    <SearchCard>
+    <StyleShowCard>
       <div className="img-wrapper">
         <img alt={name} src={img} />
       </div>
       <h1>{name}</h1>
       <p>{summaryAstext}</p>
-      <div>
+      <div className="btns">
         <Link to={`/show/${id}`}>Read More</Link>
         <button>Star me</button>
       </div>
-    </SearchCard>
+    </StyleShowCard>
   );
 }
