@@ -14,6 +14,7 @@ export default function Show() {
       setShow(results);
     });
   }, [id]);
+  console.log(show);
 
   return <h1>This is Show page </h1>;
 }
