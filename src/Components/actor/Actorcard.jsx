@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleActorCard } from "./actor.style.js";
+import { Link } from "react-router-dom";
 
 export default function Actorcard({
   id,
@@ -17,6 +18,10 @@ export default function Actorcard({
       <p>{country ? `Comes from ${country}` : "No Country Known"}</p>
       {/* {birthday ? <p>Born {birthday}</p> : null} */}
       <p className="birthday">{birthday}</p>
+      <div className="btns">
+        <Link to={`/people/${id}`}>Read More</Link>
+        <button>Star me</button>
+      </div>
     </StyleActorCard>
   );
 }
