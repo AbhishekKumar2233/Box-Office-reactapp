@@ -10,7 +10,7 @@ export default function Show() {
   const [show, setShow] = useState(null);
 
   useEffect(() => {
-    apiGet(`/shows/$(id)?embed[]=season&embed[]=cast`).then((results) => {
+    apiGet(`/shows/${id}?embed[]=season&embed[]=cast`).then((results) => {
       setShow(results);
     });
   }, [id]);
