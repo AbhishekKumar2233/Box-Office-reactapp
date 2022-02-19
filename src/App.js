@@ -1,6 +1,7 @@
 import React from "react";
 import "./index.css";
 import About from "./Pages/About";
+import Show from "./Pages/Show";
 import Home from "./Pages/Home";
 import { Switch, Route } from "react-router-dom";
 
@@ -11,6 +12,10 @@ function App() {
         {/* home page routing */}
         <Route exact path="/">
           <Home />
+        </Route>
+        {/* show pages  */}
+        <Route exact path="/show/:id">
+          <Show />
         </Route>
         {/* simple routing */}
         <Route exact path="/starred">

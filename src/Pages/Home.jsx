@@ -12,6 +12,19 @@ export default function Home() {
   const [searchOption, setSearchoption] = useState("shows");
   const isshowsSearch = searchOption === "shows";
 
+  // input func
+  function onInputchange(event) {
+    const en = event.target.value;
+    setInput(en);
+  }
+  //keydown func
+  function Onkeydown(event) {
+    if (event.keyCode === 13) {
+      onSearch();
+    }
+    // console.log(event.keyCode);
+  }
+  //search func of button
   function onSearch() {
     apiGet(`/search/${searchOption}?q=${input}`).then((result) => {
       console.log(setResult);
@@ -19,18 +32,7 @@ export default function Home() {
     });
   }
 
-  function onInputchange(event) {
-    const en = event.target.value;
-    setInput(en);
-  }
-
-  function Onkeydown(event) {
-    if (event.keyCode === 13) {
-      onSearch();
-    }
-    // console.log(event.keyCode);
-  }
-
+  //render func for get data from api
   function renderResult() {
     if (result && result.length === 0) {
       return <div>No Result</div>;
@@ -47,6 +49,7 @@ export default function Home() {
       //result.map((result) => (
       // <div key={result.person.id}>{result.person.name}</div>));
 
+      //
       //  2nd logic to get same output
       //     searchOption === "shows"
       // ? result.map((result) => (
