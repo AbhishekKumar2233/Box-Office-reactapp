@@ -12,16 +12,16 @@ export default function Home() {
   const [searchOption, setSearchoption] = useState("shows");
   const isshowsSearch = searchOption === "shows";
 
-  useEffect(() => {
-    console.log("use effect run");
-    //it run ones when arr is empty
-    //if value of arr changes or update it ptint
+  // useEffect(() => {
+  //   console.log("use effect run");
+  //   //it run ones when arr is empty
+  //   //if value of arr changes or update it ptint
 
-    return () => {
-      console.exit("exit");
-      //it only run when page unmounted
-    };
-  }, []);
+  //   return () => {
+  //     console.exit("exit");
+  //     //it only run when page unmounted
+  //   };
+  // }, []);
   //basically useEffect hook has 1 func and 1 array
 
   // input func
