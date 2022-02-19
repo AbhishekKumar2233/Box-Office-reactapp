@@ -18,9 +18,11 @@ function App() {
         <Route exact path="/show/:id">
           <Show />
         </Route>
+        {/* Actor pages  */}
         <Route exact path="/people/:id">
           <Actor />
         </Route>
+
         {/* simple routing */}
         <Route exact path="/starred">
           This is starred
