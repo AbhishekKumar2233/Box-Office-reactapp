@@ -1,5 +1,9 @@
 import React, { useReducer, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import Cast from "../Components/show/Cast";
+import Details from "../Components/show/Details";
+import Seasons from "../Components/show/Seasons";
+import ShowmainData from "../Components/show/ShowmainData";
 import { apiGet } from "../misc/config";
 
 const reducer = (prevState, action) => {
@@ -67,5 +71,21 @@ export default function Show() {
   //   return <div>Error{error}</div>;
   // }
 
-  return <h1>This is Show page </h1>;
+  return (
+    <div>
+      <ShowmainData />
+      <div>
+        <h2>Details</h2>
+        <Details />
+      </div>
+      <div>
+        <h2>Seasons</h2>
+        <Seasons />
+      </div>
+      <div>
+        <h2>Cast</h2>
+        <Cast />
+      </div>
+    </div>
+  );
 }
