@@ -72,6 +72,10 @@ export default function Show() {
   }
 
   return (
+    // <>
+    //   {console.log(show)}
+
+    // </>
     <div>
       <ShowmainData
         image={show.image}

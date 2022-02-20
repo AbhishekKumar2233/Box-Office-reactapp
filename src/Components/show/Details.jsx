@@ -1,5 +1,11 @@
 import React from "react";
 
-export default function Details() {
-  return <h1>Hyy Details</h1>;
+export default function Details({ status, premiered, network }) {
+  return (
+    <div>
+      <p>
+        Status:<span>{status}</span>
+      </p>
+    </div>
+  );
 }
