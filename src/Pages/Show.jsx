@@ -11,17 +11,27 @@ export default function Show() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    let isMounted = true;
+
     apiGet(`/shows/${id}?embed[]=seasons&embed[]=cast`)
       .then((results) => {
         setTimeout(() => {
-          setShow(results);
-          setIsLoading(false);
+          if (isMounted) {
+            setShow(results);
+            setIsLoading(false);
+          }
         }, 2000);
       })
       .catch((err) => {
-        setError(err.message);
-        setIsLoading(false);
+        if (isMounted) {
+          setError(err.message);
+          setIsLoading(false);
+        }
       });
+
+    return () => {
+      isMounted = false;
+    }; //this func run when page is unmounted
   }, [id]);
 
   if (isLoading) {
