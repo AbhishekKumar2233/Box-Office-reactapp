@@ -6,15 +6,30 @@ export default function Show() {
   //useParams is hook of react-router-dom
   //used to get value form url
   const { id } = useParams();
-
   const [show, setShow] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    apiGet(`/shows/${id}?embed[]=season&embed[]=cast`).then((results) => {
-      setShow(results);
-    });
+    apiGet(`/shows/${id}?embed[]=seasons&embed[]=cast`)
+      .then((results) => {
+        setTimeout(() => {
+          setShow(results);
+          setIsLoading(false);
+        }, 2000);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setIsLoading(false);
+      });
   }, [id]);
-  console.log(show);
+
+  if (isLoading) {
+    return <div>Data is being loaded</div>;
+  }
+  if (error) {
+    return <div>Error{error}</div>;
+  }
 
   return <h1>This is Show page </h1>;
 }
