@@ -1,14 +1,42 @@
-import React, { useState, useEffect } from "react";
+import React, { useReducer, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { apiGet } from "../misc/config";
+
+const reducer = (prevState, action) => {
+  switch (action.type) {
+    case "FETCH_SUCCESS": {
+      return { isLoading: false, error: null, show: action.show }; // ..prev it merge prev state
+    }
+    case "FETCH_FAILED": {
+      return {
+        ...prevState,
+        isLoading: false,
+        error: action.error,
+        show: action.show
+      };
+    }
+    default:
+      return prevState;
+  }
+};
+
+const initialState = {
+  show: null,
+  isLoading: true,
+  error: null
+};
 
 export default function Show() {
   //useParams is hook of react-router-dom
   //used to get value form url
   const { id } = useParams();
-  const [show, setShow] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
+
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  console.log(state);
+  // const [show, setShow] = useState(null);
+  // const [isLoading, setIsLoading] = useState(true);
+  // const [error, setError] = useState(null);
 
   useEffect(() => {
     let isMounted = true;
@@ -17,15 +45,13 @@ export default function Show() {
       .then((results) => {
         setTimeout(() => {
           if (isMounted) {
-            setShow(results);
-            setIsLoading(false);
+            dispatch({ type: "FETCH_SUCCESS", show: results });
           }
         }, 2000);
       })
       .catch((err) => {
         if (isMounted) {
-          setError(err.message);
-          setIsLoading(false);
+          dispatch({ type: "FETCH_FAILED", error: err.message });
         }
       });
 
@@ -34,12 +60,12 @@ export default function Show() {
     }; //this func run when page is unmounted
   }, [id]);
 
-  if (isLoading) {
-    return <div>Data is being loaded</div>;
-  }
-  if (error) {
-    return <div>Error{error}</div>;
-  }
+  // if (isLoading) {
+  //   return <div>Data is being loaded</div>;
+  // }
+  // if (error) {
+  //   return <div>Error{error}</div>;
+  // }
 
   return <h1>This is Show page </h1>;
 }
