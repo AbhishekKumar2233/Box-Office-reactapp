@@ -1,4 +1,5 @@
 import React from "react";
+import { Star } from "../styled";
 
 export default function ShowmainData({ name, rating, summary, tags, image }) {
   return (
@@ -8,11 +9,11 @@ export default function ShowmainData({ name, rating, summary, tags, image }) {
         <h1>{name}</h1>
         <h1>Hyy</h1>
         <div>
-          {/* <Star /> */}
+          <Star />
           <span> {rating.average || "N/A"}</span>
         </div>
       </div>
-      {/* <div dangerouslySetInnerHTML={{ _html: summary }}>
+      <div dangerouslySetInnerHTML={{ _html: summary }}>
         <div>
           Tags:{""}
           <div>
@@ -21,7 +22,7 @@ export default function ShowmainData({ name, rating, summary, tags, image }) {
             ))}
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }
