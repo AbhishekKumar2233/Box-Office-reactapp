@@ -13,14 +13,14 @@ export default function ShowmainData({ name, rating, summary, tags, image }) {
           <span> {rating.average || "N/A"}</span>
         </div>
       </div>
-      <div dangerouslySetInnerHTML={{ _html: summary }}>
+      <div dangerouslySetInnerHTML={{ __html: summary }} />
+
+      <div>
+        Tags:{""}
         <div>
-          Tags:{""}
-          <div>
-            {tags.map((tag, i) => (
-              <span key={i}>{tag}</span>
-            ))}
-          </div>
+          {tags.map((tag, i) => (
+            <span key={i}>{tag}</span>
+          ))}
         </div>
       </div>
     </div>
