@@ -21,6 +21,12 @@ export default function Seasons({ seasons }) {
                 Episodes: <span>{season.episodeOrder}</span>
               </p>
             </div>
+            <div>
+              Aired:{""}
+              <span>
+                {season.premierDate} - {season.endDate}
+              </span>
+            </div>
           </div>
         ))}
       </div>
