@@ -6,6 +6,9 @@ export default function Details({ status, premiered, network }) {
       <p>
         Status:<span>{status}</span>
       </p>
+      <p>
+        Premiered {premiered} {network ? `on ${network.name}` : null}
+      </p>
     </div>
   );
 }
