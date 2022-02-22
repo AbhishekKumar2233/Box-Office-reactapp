@@ -5,6 +5,7 @@ import Details from "../Components/show/Details";
 import Seasons from "../Components/show/Seasons";
 import ShowmainData from "../Components/show/ShowmainData";
 import { apiGet } from "../misc/config";
+import { ShowPageWrapper } from "./Showstyled";
 
 const reducer = (prevState, action) => {
   switch (action.type) {
@@ -76,7 +77,7 @@ export default function Show() {
     //   {console.log(show)}
 
     // </>
-    <div>
+    <ShowPageWrapper>
       <ShowmainData
         image={show.image}
         name={show.name}
@@ -100,6 +101,6 @@ export default function Show() {
         <h2>Cast</h2>
         <Cast cast={show._embedded.cast} />
       </div>
-    </div>
+    </ShowPageWrapper>
   );
 }
