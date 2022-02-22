@@ -31,3 +31,27 @@ export const MainDataWrapper = styled.div`
     }
   }
 `;
+
+export const Headline = styled.div`
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  h1 {
+    margin: 0;
+    border-right: 1px solid #ddd;
+    padding-right: 25px;
+    margin-right: 20px;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    span {
+      margin-left: 10px;
+    }
+  }
+`;
+
+export const Taglist = styled.div`
+  display: inline-flex;
+`;
