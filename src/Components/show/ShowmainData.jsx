@@ -1,5 +1,5 @@
 import React from "react";
-import { Headline, MainDataWrapper } from "./Showmainstyle";
+import { Headline, MainDataWrapper, Taglist } from "./Showmainstyle";
 import { Star } from "../styled";
 
 export default function ShowmainData({ name, rating, summary, tags, image }) {
@@ -22,11 +22,11 @@ export default function ShowmainData({ name, rating, summary, tags, image }) {
 
         <div>
           Tags:{""}
-          <div>
+          <Taglist>
             {tags.map((tag, i) => (
               <span key={i}>{tag}</span>
             ))}
-          </div>
+          </Taglist>
         </div>
       </div>
     </MainDataWrapper>

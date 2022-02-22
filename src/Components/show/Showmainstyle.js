@@ -54,4 +54,14 @@ export const Headline = styled.div`
 
 export const Taglist = styled.div`
   display: inline-flex;
+  flex-wrap: wrap;
+  span {
+    margin: 6px;
+    margin-bottom: 0;
+    color: blue;
+    background-color: #d0c9ff;
+    padding: 3px 13px;
+    border-radius: 20px;
+    font-size: 14px;
+  }
 `;
