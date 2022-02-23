@@ -17,6 +17,7 @@ export default function Starred() {
       Promise.all(promises)
         .then((apiData) => apiData.map((show) => ({ show })))
         .then((results) => {
+          console.log(results);
           setShows(results);
           setLoading(false);
         })
