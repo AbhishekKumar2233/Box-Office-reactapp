@@ -4,15 +4,15 @@ import { apiGet } from "../misc/config";
 import ShowGrid from "../Components/show/Showgrid";
 
 export default function Starred() {
-  const [Starred] = useShows();
+  const [starred] = useShows();
 
   const [shows, setShows] = useState(null);
   const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    if (Starred && Starred.length > 0) {
-      const promises = Starred.map((showId) => apiGet(`/shows/${showId}`));
+    if (starred && starred.length > 0) {
+      const promises = starred.map((showId) => apiGet(`/shows/${showId}`));
       Promise.all(promises)
         .then((apiData) => apiData.map((show) => ({ show })))
         .then((results) => {
@@ -26,13 +26,14 @@ export default function Starred() {
     } else {
       setLoading(false);
     }
-  }, [Starred]);
+  }, [starred]);
 
   return (
     <div>
       Starred page
       {isLoading && <div>Show are still loading</div>}
       {error && <div>Error Occured: {error}</div>}
+      {!isLoading && !error && shows && <div> data is here</div>}
       {!isLoading && !shows && <div>No Shows </div>}
       {!isLoading && !error && shows && <ShowGrid data={shows} />}
     </div>

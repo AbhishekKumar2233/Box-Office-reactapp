@@ -10,9 +10,11 @@ export default function Showgrid({ data }) {
     <FlexGrid>
       {data.map(({ show }) => {
         const isStarred = starredShows.includes(show.id);
+
         const onStarClick = () => {
           if (isStarred) {
             dispatchStarred({ type: "REMOVE", showId: show.id });
+            console.log("hyy");
           } else {
             dispatchStarred({ type: "ADD", showId: show.id });
           }
