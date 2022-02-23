@@ -4,6 +4,7 @@ import About from "./Pages/About";
 import Show from "./Pages/Show";
 import Actor from "./Pages/Actor";
 import Home from "./Pages/Home";
+import Starred from "./Pages/Starred";
 import { Switch, Route } from "react-router-dom";
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
 
         {/* simple routing */}
         <Route exact path="/starred">
-          This is starred
+          <Starred />
         </Route>
         {/* component rendering */}
         <Route exact path="/about">
