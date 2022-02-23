@@ -14,6 +14,7 @@ export default function Starred() {
     if (Starred && Starred.length > 0) {
       const promises = Starred.map((showId) => apiGet(`/shows/${showId}`));
       Promise.all(promises)
+        .then((apiData) => apiData.map((show) => ({ show })))
         .then((results) => {
           setShows(results);
           setLoading(false);
