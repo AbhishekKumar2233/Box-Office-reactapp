@@ -25,6 +25,7 @@ export default function Showgrid({ data }) {
             name={show.name}
             img={show.image ? show.image.medium : null}
             summary={show.summary}
+            isStarred={isStarred}
             onStarClick={onStarClick}
           />
         );
