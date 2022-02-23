@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { SearchCard } from "../styled";
 import { StyleShowCard } from "./show.style";
 
-export default function Showcard({ id, name, img, summary }) {
+export default function Showcard({ id, name, img, summary, onStarClick }) {
   const summaryAstext = summary
     ? `${summary.split("").slice(0, 100).join("").replace(/<.+?>/g, "")}...`
     : "No Description";
@@ -17,7 +17,9 @@ export default function Showcard({ id, name, img, summary }) {
       <p>{summaryAstext}</p>
       <div className="btns">
         <Link to={`/show/${id}`}>Read More</Link>
-        <button>Star me</button>
+        <button type="button" onClick={onStarClick}>
+          Star me
+        </button>
       </div>
     </StyleShowCard>
   );
