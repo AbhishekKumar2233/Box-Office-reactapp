@@ -18,7 +18,7 @@ export const StyleShowCard = styled(SearchCard)`
       outline: none;
       border: 1px solid #8e8e8e;
       border-radius: 15px;
-      padding: 5px 20px;
+      padding: 5px 15px 0px 15px;
       background-color: #fff;
       display: block;
       justify-content: center;
