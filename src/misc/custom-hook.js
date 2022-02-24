@@ -35,7 +35,7 @@ export function useShows(key = "shows") {
 export function useLastQuery(key = "lastQuery") {
   const [input, setInput] = useState(() => {
     const persisted = sessionStorage.getItem(key);
-    return persisted ? JSON.parser(persisted) : "";
+    return persisted ? JSON.parse(persisted) : "";
   });
 
   const setpersistedInput = (newState) => {
