@@ -4,6 +4,7 @@ export const FlexGrid = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 25px;
 `;
 
 export const SearchCard = styled.div`

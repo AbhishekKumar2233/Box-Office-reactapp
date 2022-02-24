@@ -6,10 +6,19 @@ import Actor from "./Pages/Actor";
 import Home from "./Pages/Home";
 import Starred from "./Pages/Starred";
 import { Switch, Route } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
+
+const theme = {
+  mainColors: {
+    blue: "#2400ff",
+    gray: "#c6c6c6",
+    dark: "#353535"
+  }
+};
 
 function App() {
   return (
-    <div>
+    <ThemeProvider theme={theme}>
       <Switch>
         {/* home page routing */}
         <Route exact path="/">
@@ -40,7 +49,7 @@ function App() {
           <About />
         </Route>
       </Switch> */}
-    </div>
+    </ThemeProvider>
   );
 }
 

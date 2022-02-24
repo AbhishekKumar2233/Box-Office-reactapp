@@ -45,3 +45,25 @@ code {
   height: 100vh;
   background-color: rgb(255, 78, 46);
 }
+input[type="radio"] {
+  margin-top: 20px;
+}
+
+.Input-type input {
+  height: 25px;
+  border: 1px solid black;
+  outline: none;
+  background-color: transparent;
+}
+
+.Input-type button {
+  height: 29px;
+  border: 1px solid black;
+  outline: none;
+  background-color: transparent;
+}
+.Input-type button:hover {
+  color: #000000;
+  background-color: #ffa400;
+}
+/* #353535#c6c6c6#2400ff */
