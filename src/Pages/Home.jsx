@@ -5,9 +5,10 @@ import { apiGet } from "../misc/config";
 import Showgrid from "../Components/show/Showgrid";
 import Actorgrid from "../Components/actor/Actorgrid";
 import "../index.css";
+import { useLastQuery } from "../misc/custom-hook";
 
 export default function Home() {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useLastQuery();
   const [result, setResult] = useState(null);
   const [searchOption, setSearchoption] = useState("shows");
   const isshowsSearch = searchOption === "shows";

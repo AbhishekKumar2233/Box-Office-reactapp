@@ -38,9 +38,10 @@ export function useLastQuery(key = "lastQuery") {
     return persisted ? JSON.parser(persisted) : "";
   });
 
-  const persistedInput = (newState) => {
+  const setpersistedInput = (newState) => {
     setInput(newState);
+    sessionStorage.setItem(key, JSON.stringify(newState));
   };
 
-  return [input, setInput];
+  return [input, setpersistedInput];
 }
