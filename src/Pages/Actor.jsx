@@ -21,7 +21,13 @@ export default function Actor() {
     <div>
       {console.log(show)}
       <h1>Actor</h1>
-      <ActorMainData />
+      <ActorMainData
+        image={show.image}
+        name={show.name}
+        birthday={show.birthday}
+        country={show.country}
+        gender={show.gender}
+      />
     </div>
   );
 }
