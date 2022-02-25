@@ -97,3 +97,34 @@ export function useShow(showId) {
 
   return state;
 }
+
+// custom hook for Actor
+export function useActor(actorId) {
+  const [state, dispatch] = useReducer(reducer, {
+    show: null,
+    isLoading: true,
+    error: null
+  });
+
+  useEffect(() => {
+    let isMounted = true;
+
+    apiGet(`/people/${actorId}?embed[]=seasons&embed[]=cast`)
+      .then((results) => {
+        if (isMounted) {
+          dispatch({ type: "FETCH_SUCCESS", show: results });
+        }
+      })
+      .catch((err) => {
+        if (isMounted) {
+          dispatch({ type: "FETCH_FAILED", error: err.message });
+        }
+      });
+
+    return () => {
+      isMounted = false;
+    }; //this func run when page is unmounted
+  }, [actorId]);
+
+  return state;
+}
