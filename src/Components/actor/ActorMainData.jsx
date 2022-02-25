@@ -1,7 +1,5 @@
 import React from "react";
 
-export default ActorMainData(){
-  return(
-    <div>ActorMainData</div>
-  );
+export default function ActorMainData() {
+  return <h1>Actor Main</h1>;
 }
