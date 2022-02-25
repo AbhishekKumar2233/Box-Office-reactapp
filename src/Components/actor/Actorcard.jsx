@@ -12,7 +12,9 @@ export default function Actorcard({
 }) {
   return (
     <StyleActorCard>
-      <img src={img ? img : null} alt={name} />
+      <div className="img-wrapper">
+      <img  src={img ? img : null} alt={name} />
+      </div>
       <h2>{name}</h2>
       <h3>{gender}</h3>
       <p>{country ? `Comes from ${country}` : "No Country Known"}</p>
