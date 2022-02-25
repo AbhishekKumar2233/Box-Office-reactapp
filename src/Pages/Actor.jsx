@@ -19,6 +19,7 @@ export default function Actor() {
 
   return (
     <div>
+      {console.log(show)}
       <h1>Actor</h1>
       <ActorMainData />
     </div>

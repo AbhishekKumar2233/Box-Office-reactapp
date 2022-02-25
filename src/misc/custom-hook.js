@@ -109,7 +109,7 @@ export function useActor(actorId) {
   useEffect(() => {
     let isMounted = true;
 
-    apiGet(`/people/${actorId}?embed[]=seasons&embed[]=cast`)
+    apiGet(`/people/${actorId}`)
       .then((results) => {
         if (isMounted) {
           dispatch({ type: "FETCH_SUCCESS", show: results });
