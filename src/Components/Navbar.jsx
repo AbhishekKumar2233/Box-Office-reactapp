@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavList, LinkStyled } from "./Navstyle";
 
 const Links = [
   { to: "/", name: "Home" },
@@ -12,7 +12,7 @@ export default function Navbar() {
       <ul>
         {Links.map((item) => (
           <li>
-            <Link to={item.to}>{item.name}</Link>
+            <LinkStyled to={item.to}>{item.name}</LinkStyled>
           </li>
         ))}
       </ul>

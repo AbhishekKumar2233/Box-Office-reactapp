@@ -26,7 +26,7 @@ export default function Showcard({
       <div className="btns">
         <Link to={`/show/${id}`}>Read More</Link>
 
-        <button type="button" onClick={onStarClick}>
+        <button active type="button" onClick={onStarClick}>
           <Star />
         </button>
       </div>
