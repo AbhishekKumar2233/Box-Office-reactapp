@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MainPageLayout from "../Components/MainPageLayout";
-import { SearchInput } from "../Components/HomeStyle";
+import { SearchInput, SearchButtonWrapper } from "../Components/HomeStyle";
 import { apiGet } from "../misc/config";
 import Showgrid from "../Components/show/Showgrid";
 import Actorgrid from "../Components/actor/Actorgrid";
@@ -82,20 +82,19 @@ export default function Home() {
   return (
     <MainPageLayout>
       <SearchInput>
-        <div className="Input-type">
-          <input
-            placeholder="Search for something"
-            type="text"
-            onChange={onInputchange}
-            onKeyDown={Onkeydown}
-            value={input}
-          />
-
-          <button type="button" onClick={onSearch}>
-            Search
-          </button>
-        </div>
+        <input
+          placeholder="Search for something"
+          type="text"
+          onChange={onInputchange}
+          onKeyDown={Onkeydown}
+          value={input}
+        />
       </SearchInput>
+      <SearchButtonWrapper>
+        <button type="button" onClick={onSearch}>
+          Search
+        </button>
+      </SearchButtonWrapper>
 
       <br />
       <label htmlFor="shows-search">
