@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MainPageLayout from "../Components/MainPageLayout";
-import Navbar from "../Components/Navbar";
+import { SearchInput } from "../Components/HomeStyle";
 import { apiGet } from "../misc/config";
 import Showgrid from "../Components/show/Showgrid";
 import Actorgrid from "../Components/actor/Actorgrid";
@@ -81,19 +81,22 @@ export default function Home() {
 
   return (
     <MainPageLayout>
-      <div className="Input-type">
-        <input
-          placeholder="Search for something"
-          type="text"
-          onChange={onInputchange}
-          onKeyDown={Onkeydown}
-          value={input}
-        />
+      <SearchInput>
+        <div className="Input-type">
+          <input
+            placeholder="Search for something"
+            type="text"
+            onChange={onInputchange}
+            onKeyDown={Onkeydown}
+            value={input}
+          />
 
-        <button type="button" onClick={onSearch}>
-          Search
-        </button>
-      </div>
+          <button type="button" onClick={onSearch}>
+            Search
+          </button>
+        </div>
+      </SearchInput>
+
       <br />
       <label htmlFor="shows-search">
         Shows
