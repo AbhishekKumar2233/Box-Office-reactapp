@@ -16,3 +16,29 @@ export const SearchInput = styled.div`
     color: #8d8d8d;
   }
 `;
+export const RadioInputWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  div {
+    margin: 0 15px;
+  }
+`;
+
+export const SearchButtonWrapper = styled.div`
+  text-align: center;
+  margin-bottom: 35px;
+  button {
+    color: #ffffff;
+    background-color: ${({ theme }) => theme.mainColors.blue};
+    margin: auto;
+    padding: 10px 50px;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+`;
