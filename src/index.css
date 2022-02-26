@@ -14,18 +14,7 @@ code {
 .app {
   text-align: center;
 }
-.navbar {
-  display: flex;
-  margin: 0px auto;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  padding: 0px 0px;
-}
-.navbar ul {
-  display: flex;
-  padding: 0px;
-}
+
 .navbar ul li {
   list-style: none;
   padding: 10px;
@@ -34,9 +23,7 @@ code {
   text-decoration: none;
   font-weight: 600;
 }
-.navbar ul li a:hover {
-  border-bottom: 2px solid blue;
-}
+
 .home {
   height: 100vh;
   background-color: rgb(255, 238, 0);
