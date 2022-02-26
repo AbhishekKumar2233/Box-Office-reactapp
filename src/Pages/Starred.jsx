@@ -32,11 +32,10 @@ export default function Starred() {
 
   return (
     <MainPageLayout>
-      Starred page
       {isLoading && <div>Show are still loading</div>}
       {error && <div>Error Occured: {error}</div>}
       {!isLoading && !error && shows && <div> data is here</div>}
-      {!isLoading && !shows && <div>No Shows </div>}
+      {!isLoading && !shows && <h1>No Data </h1>}
       {!isLoading && !error && shows && <ShowGrid data={shows} />}
     </MainPageLayout>
   );
