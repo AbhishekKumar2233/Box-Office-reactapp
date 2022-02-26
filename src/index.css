@@ -50,7 +50,9 @@ input[type="radio"] {
   background-color: transparent;
 }
 .Input-type button:hover {
-  color: #000000;
-  background-color: #ffa400;
+  color: #ffffff;
+  font-weight: bold;
+  background-color: #2400ff;
 }
-/* #353535#c6c6c6#2400ff */
+
+
