@@ -85,15 +85,14 @@ export default function Home() {
 
   return (
     <MainPageLayout>
-      <SearchInput>
-        <input
-          placeholder="Search for something"
-          type="text"
-          onChange={onInputchange}
-          onKeyDown={Onkeydown}
-          value={input}
-        />
-      </SearchInput>
+      <SearchInput
+        placeholder="Search for something"
+        type="text"
+        onChange={onInputchange}
+        onKeyDown={Onkeydown}
+        value={input}
+      />
+
       <SearchButtonWrapper>
         <button type="button" onClick={onSearch}>
           Search

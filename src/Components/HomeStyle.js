@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SearchInput = styled.div`
+export const SearchInput = styled.input`
   display: block;
   width: 250px;
   margin: auto;
