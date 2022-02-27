@@ -1,10 +1,12 @@
 import React from "react";
+import { RadioWrapper } from "./CustomRadioStyle";
 
 export default function CustomRadio({ label, ...restProps }) {
   return (
-    <label htmlFor="actors-search">
+    <RadioWrapper htmlFor="actors-search">
       {label}
       <input {...restProps} type="radio" />
-    </label>
+      <span></span>
+    </RadioWrapper>
   );
 }
