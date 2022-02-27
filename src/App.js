@@ -38,9 +38,9 @@ function App() {
           <Starred />
         </Route>
         {/* component rendering */}
-        <Route exact path="/about">
+        {/* <Route exact path="/about">
           <About />
-        </Route>
+        </Route> */}
         {/* error page */}
         <Route>This is 404 page</Route>
       </Switch>

@@ -3,10 +3,9 @@ import { RadioWrapper } from "./CustomRadioStyle";
 
 export default function CustomRadio({ label, ...restProps }) {
   return (
-    <RadioWrapper htmlFor="actors-search">
+    <div htmlFor={restProps.id}>
       {label}
-      <input {...restProps} type="radio" />
-      <span></span>
-    </RadioWrapper>
+      <input type="radio" {...restProps} />
+    </div>
   );
 }

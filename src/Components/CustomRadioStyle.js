@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const RadioWrapper = styled.label`
+export const RadioWrapper = styled.label`
   display: block;
   position: relative;
   padding-left: 25px;

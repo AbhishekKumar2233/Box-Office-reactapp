@@ -119,20 +119,24 @@ export default function Home() {
             />
           </label>
         </div> */}
-        <CustomRadio
-          label="Shows"
-          id="shows-search"
-          value="shows"
-          checked={isshowsSearch}
-          onChange={onRadiochange}
-        />
-        <CustomRadio
-          label="Actor"
-          id="actors-search"
-          value="people"
-          checked={!isshowsSearch}
-          onChange={onRadiochange}
-        />
+        <div>
+          <CustomRadio
+            label="Shows"
+            id="shows-search"
+            value="shows"
+            checked={isshowsSearch}
+            onChange={onRadiochange}
+          />
+        </div>
+        <div>
+          <CustomRadio
+            label="Actor"
+            id="actors-search"
+            value="people"
+            checked={!isshowsSearch}
+            onChange={onRadiochange}
+          />
+        </div>
       </RadioInputWrapper>
       <SearchButtonWrapper>
         <button type="button" onClick={onSearch}>
