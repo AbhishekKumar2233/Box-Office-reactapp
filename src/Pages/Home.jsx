@@ -10,6 +10,7 @@ import Showgrid from "../Components/show/Showgrid";
 import Actorgrid from "../Components/actor/Actorgrid";
 import "../index.css";
 import { useLastQuery } from "../misc/custom-hook";
+import CustomRadio from "../Components/CustomRadio";
 
 export default function Home() {
   const [input, setInput] = useLastQuery();
@@ -106,7 +107,7 @@ export default function Home() {
             />
           </label>
         </div>
-        <div>
+        {/* <div>
           <label htmlFor="actors-search">
             Actors
             <input
@@ -117,7 +118,13 @@ export default function Home() {
               onChange={onRadiochange}
             />
           </label>
-        </div>
+        </div> */}
+        <CustomRadio
+          id="actors-search"
+          value="people"
+          checked={!isshowsSearch}
+          onChange={onRadiochange}
+        />
       </RadioInputWrapper>
       <SearchButtonWrapper>
         <button type="button" onClick={onSearch}>
