@@ -36,7 +36,7 @@ export const Star = styled.div`
   display: inline-block;
   width: 18px;
   height: 18px;
-  background-color: ${(props) => (props.active ? "#ffc806" : "#ddd")};
+  background-color: ${({ active }) => (active ? "#ffc806" : "#ddd")};
   /* background-color: #ffc806; */
   clip-path: polygon(
     50% 0%,
@@ -50,4 +50,7 @@ export const Star = styled.div`
     2% 35%,
     39% 35%
   );
+  &:active {
+    background-color: #ffc806;
+  }
 `;

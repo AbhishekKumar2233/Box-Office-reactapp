@@ -25,7 +25,6 @@ export default function Showcard({
       <p>{summaryAstext}</p>
       <div className="btns">
         <Link to={`/show/${id}`}>Read More</Link>
-
         <button active type="button" onClick={onStarClick}>
           <Star />
         </button>
