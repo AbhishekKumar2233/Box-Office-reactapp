@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import MainPageLayout from "../Components/MainPageLayout";
-import { SearchInput, SearchButtonWrapper } from "../Components/HomeStyle";
+import {
+  SearchInput,
+  SearchButtonWrapper,
+  RadioInputWrapper
+} from "../Components/HomeStyle";
 import { apiGet } from "../misc/config";
 import Showgrid from "../Components/show/Showgrid";
 import Actorgrid from "../Components/actor/Actorgrid";
@@ -48,7 +52,7 @@ export default function Home() {
   //render func for get data from api
   function renderResult() {
     if (result && result.length === 0) {
-      return <div>No Result</div>;
+      return <h2>No Result</h2>;
     }
     if (result && result.length > 0) {
       return result[0].show ? (
