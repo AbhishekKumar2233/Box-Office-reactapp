@@ -3,7 +3,7 @@ import React from "react";
 export default function CustomRadio({ label, ...restProps }) {
   return (
     <label htmlFor="actors-search">
-      Actors
+      {label}
       <input {...restProps} type="radio" />
     </label>
   );

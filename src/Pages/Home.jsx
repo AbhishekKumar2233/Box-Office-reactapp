@@ -95,7 +95,7 @@ export default function Home() {
       />
 
       <RadioInputWrapper>
-        <div>
+        {/* <div>
           <label htmlFor="shows-search">
             Shows
             <input
@@ -106,7 +106,7 @@ export default function Home() {
               onChange={onRadiochange}
             />
           </label>
-        </div>
+        </div> */}
         {/* <div>
           <label htmlFor="actors-search">
             Actors
@@ -120,6 +120,14 @@ export default function Home() {
           </label>
         </div> */}
         <CustomRadio
+          label="Shows"
+          id="shows-search"
+          value="shows"
+          checked={isshowsSearch}
+          onChange={onRadiochange}
+        />
+        <CustomRadio
+          label="Actor"
           id="actors-search"
           value="people"
           checked={!isshowsSearch}
