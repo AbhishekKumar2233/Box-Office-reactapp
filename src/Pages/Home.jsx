@@ -99,27 +99,32 @@ export default function Home() {
         </button>
       </SearchButtonWrapper>
 
-      <br />
-      <label htmlFor="shows-search">
-        Shows
-        <input
-          id="shows-search"
-          type="radio"
-          value="shows"
-          checked={isshowsSearch}
-          onChange={onRadiochange}
-        />
-      </label>
-      <label htmlFor="actors-search">
-        Actors
-        <input
-          id="actors-search"
-          type="radio"
-          value="people"
-          checked={!isshowsSearch}
-          onChange={onRadiochange}
-        />
-      </label>
+      <RadioInputWrapper>
+        <div>
+          <label htmlFor="shows-search">
+            Shows
+            <input
+              id="shows-search"
+              type="radio"
+              value="shows"
+              checked={isshowsSearch}
+              onChange={onRadiochange}
+            />
+          </label>
+        </div>
+        <div>
+          <label htmlFor="actors-search">
+            Actors
+            <input
+              id="actors-search"
+              type="radio"
+              value="people"
+              checked={!isshowsSearch}
+              onChange={onRadiochange}
+            />
+          </label>
+        </div>
+      </RadioInputWrapper>
       {renderResult()}
     </MainPageLayout>
   );
