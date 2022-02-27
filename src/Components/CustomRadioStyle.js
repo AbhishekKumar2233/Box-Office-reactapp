@@ -13,13 +13,15 @@ export const RadioWrapper = styled.label`
   input {
     position: absolute;
     cursor: pointer;
+    opacity: 0;
+    background-color: red;
   }
   span {
     position: absolute;
     top: 0;
     left: 0;
-    height: 16px;
-    width: 16px;
+    height: 12px;
+    width: 12px;
     background-color: #fff;
     border: 2px solid ${({ theme }) => theme.mainColors.blue};
     border-radius: 50%;
@@ -37,11 +39,11 @@ export const RadioWrapper = styled.label`
     display: block;
   }
   span:after {
-    top: 4px;
-    left: 4px;
+    top: 2px;
+    left: 2px;
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    border: 2px solid ${({ theme }) => theme.mainColors.blue};
+    background-color: ${({ theme }) => theme.mainColors.blue};
   }
 `;
