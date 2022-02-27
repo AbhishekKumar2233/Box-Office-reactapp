@@ -93,12 +93,6 @@ export default function Home() {
         value={input}
       />
 
-      <SearchButtonWrapper>
-        <button type="button" onClick={onSearch}>
-          Search
-        </button>
-      </SearchButtonWrapper>
-
       <RadioInputWrapper>
         <div>
           <label htmlFor="shows-search">
@@ -125,6 +119,11 @@ export default function Home() {
           </label>
         </div>
       </RadioInputWrapper>
+      <SearchButtonWrapper>
+        <button type="button" onClick={onSearch}>
+          Search
+        </button>
+      </SearchButtonWrapper>
       {renderResult()}
     </MainPageLayout>
   );
