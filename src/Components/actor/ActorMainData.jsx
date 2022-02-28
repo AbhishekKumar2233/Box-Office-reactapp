@@ -1,5 +1,5 @@
 import React from "react";
-import { Headline, MainDataWrapper, Taglist } from "../show/Showmainstyle";
+import { Headline, MainDataWrapper } from "../show/Showmainstyle";
 
 export default function ActorMainData({
   name,

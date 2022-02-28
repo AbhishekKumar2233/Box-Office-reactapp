@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import { TitleWrapper } from "./Titlestyle";
 
-export default function Title({ title, subtitle }) {
+function Title({ title, subtitle }) {
   return (
     <TitleWrapper>
       <h1>{title}</h1>
@@ -9,3 +9,5 @@ export default function Title({ title, subtitle }) {
     </TitleWrapper>
   );
 }
+
+export default memo(Title);
