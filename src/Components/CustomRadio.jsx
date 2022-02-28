@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import { RadioWrapper } from "./CustomRadioStyle";
 
-export default function CustomRadio({ label, ...restProps }) {
+function CustomRadio({ label, ...restProps }) {
   return (
     <RadioWrapper htmlFor={restProps.id}>
       {label}
@@ -10,3 +10,4 @@ export default function CustomRadio({ label, ...restProps }) {
     </RadioWrapper>
   );
 }
+export default memo(CustomRadio);

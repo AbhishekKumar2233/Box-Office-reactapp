@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { useLocation } from "react-router";
 import { NavList, LinkStyled } from "./Navstyle";
 
@@ -7,7 +7,7 @@ const Links = [
   { to: "/starred", name: "Starred" }
 ];
 
-export default function Navbar() {
+function Navbar() {
   const location = useLocation();
 
   return (
@@ -27,3 +27,4 @@ export default function Navbar() {
     </div>
   );
 }
+export default memo(Navbar);

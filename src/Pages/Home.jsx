@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 import MainPageLayout from "../Components/MainPageLayout";
 import {
   SearchInput,
@@ -80,9 +80,9 @@ export default function Home() {
     return null;
   }
 
-  function onRadiochange(event) {
+  const onRadiochange = useCallback((event) => {
     setSearchoption(event.target.value);
-  }
+  }, []);
 
   return (
     <MainPageLayout>
