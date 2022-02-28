@@ -17,7 +17,7 @@ export default function ActorMainData({
           <h2>{gender}</h2>
         </Headline>
         <h2>{birthday}</h2>
-        <h3>{country.name}</h3>
+        <h3>{country}</h3>
       </div>
     </MainDataWrapper>
   );
