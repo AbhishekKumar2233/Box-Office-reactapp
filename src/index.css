@@ -28,3 +28,6 @@ code {
   height: 100vh;
   background-color: rgb(255, 238, 0);
 }
+.text-side {
+  padding-left: 20px;
+}
