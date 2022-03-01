@@ -15,11 +15,11 @@ export default function ActorMainData({
       <img src={image ? image.original : pro} alt={name} />
       <div className="text-side">
         <Headline>
-          <h1>{name}</h1>
-          <h2>{gender}</h2>
+          <h1>Name : {name}</h1>
+          <h2>Gender: {gender ? gender : "Not Found"}</h2>
         </Headline>
-        <h2>{birthday}</h2>
-        <h3>{country}</h3>
+        <h2>Date of Birth : {birthday ? birthday : "Null"}</h2>
+        <h3>Country Name : {country ? country : "Null"}</h3>
       </div>
     </MainDataWrapper>
   );
