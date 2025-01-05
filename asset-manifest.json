@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Box-Office-reactapp/static/css/main.77ee9cdc.css",
+    "main.js": "/Box-Office-reactapp/static/js/main.055abd4e.js",
+    "index.html": "/Box-Office-reactapp/index.html",
+    "main.77ee9cdc.css.map": "/Box-Office-reactapp/static/css/main.77ee9cdc.css.map",
+    "main.055abd4e.js.map": "/Box-Office-reactapp/static/js/main.055abd4e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.77ee9cdc.css",
+    "static/js/main.055abd4e.js"
+  ]
+}
