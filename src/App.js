@@ -21,7 +21,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <Switch>
         {/* home page routing */}
-        <Route exact path="/">
+        <Route exact path="/Box-Office-reactapp">
           <Home />
         </Route>
         {/* show pages  */}
