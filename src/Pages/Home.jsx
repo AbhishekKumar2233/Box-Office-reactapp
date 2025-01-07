@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import MainPageLayout from "../Components/MainPageLayout";
 import {
   SearchInput,
@@ -13,20 +13,14 @@ import { useLastQuery } from "../misc/custom-hook";
 import CustomRadio from "../Components/CustomRadio";
 
 export default function Home() {
-  const [input, setInput] = useLastQuery();
+  const [input, setInput] = useLastQuery('');
   const [result, setResult] = useState(null);
   const [searchOption, setSearchoption] = useState("shows");
   const isshowsSearch = searchOption === "shows";
 
   // useEffect(() => {
-  //   console.log("use effect run");
-  //   //it run ones when arr is empty
-  //   //if value of arr changes or update it ptint
-
-  //   return () => {
-  //     console.exit("exit");
-  //     //it only run when page unmounted
-  //   };
+  //   onSearch();
+  //   setInput('');
   // }, []);
   //basically useEffect hook has 1 func and 1 array
 
