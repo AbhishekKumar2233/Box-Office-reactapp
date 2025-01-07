@@ -5,7 +5,7 @@ import Show from "./Pages/Show";
 import Actor from "./Pages/Actor";
 import Home from "./Pages/Home";
 import Starred from "./Pages/Starred";
-import { Switch, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 
 const theme = {
@@ -19,36 +19,25 @@ const theme = {
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Switch>
-        {/* home page routing */}
-        <Route exact path="/Box-Office-reactapp">
-          <Home />
-        </Route>
-        {/* show pages  */}
-        <Route exact path="/show/:id">
-          <Show />
-        </Route>
-        {/* Actor pages  */}
-        <Route exact path="/people/:id">
-          <Actor />
-        </Route>
-
-        {/* simple routing */}
-        <Route exact path="/starred">
-          <Starred />
-        </Route>
-        {/* component rendering */}
-        {/* <Route exact path="/about">
-          <About />
-        </Route> */}
-        {/* error page */}
-        <Route>This is 404 page</Route>
-      </Switch>
-      {/* <Switch>
-        <Route exact path="/about">
-          <About />
-        </Route>
-      </Switch> */}
+      <Routes>
+        {/* Home page routing */}
+        <Route path="/" element={<Home />} />
+        
+        {/* Show pages routing */}
+        <Route path="/show/:id" element={<Show />} />
+        
+        {/* Actor pages routing */}
+        <Route path="/people/:id" element={<Actor />} />
+        
+        {/* Starred page routing */}
+        <Route path="/starred" element={<Starred />} />
+        
+        {/* About page routing (optional, if needed) */}
+        <Route path="/about" element={<About />} />
+        
+        {/* Error/404 page can be added here */}
+        {/* <Route path="*" element={<NotFound />} /> */}
+      </Routes>
     </ThemeProvider>
   );
 }
